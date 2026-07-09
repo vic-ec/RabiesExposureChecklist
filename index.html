@@ -98,6 +98,8 @@
  .card-header {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  row-gap: 6px;
   gap: 10px;
   padding: 10px 16px;
   background: #F9F9F9;
@@ -111,7 +113,7 @@
  .card-title {
   font-size: 13px;
   font-weight: 700;
-  flex: 1;
+  flex: 1 1 140px;
   letter-spacing: 0.3px;
  }
  .step-num {
@@ -120,6 +122,7 @@
   font-weight: 700;
   color: var(--grey-mid);
   min-width: 28px;
+  flex-shrink: 0;
  }
 
  /* BADGES */
@@ -132,6 +135,7 @@
   border-radius: 3px;
   white-space: nowrap;
   color: white;
+  flex-shrink: 0;
  }
  .badge-green  { background: var(--cat1); }
  .badge-amber  { background: var(--cat2); }
@@ -484,6 +488,41 @@
   border-radius: 0 4px 4px 0;
   margin-bottom: 10px;
  }
+
+ /* SCROLLABLE TABLES (prevents column squeeze/overlap on narrow screens) */
+ .table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+ }
+
+ /* MOBILE */
+ @media (max-width: 600px) {
+  body { padding: 10px; font-size: 12.5px; }
+  .app-header { padding: 12px 14px !important; }
+  .card-body { padding: 12px; }
+  .step-num { font-size: 15px; min-width: 24px; }
+  .card-title { font-size: 12.5px; }
+  .badge { font-size: 8.5px; }
+  .cat-grid { grid-template-columns: 1fr; }
+  .cat-num { font-size: 17px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  th, td { font-size: 11.5px; padding: 6px 8px; }
+
+  /* Stack the Clear Form / See Management buttons instead of overlapping */
+  #checklist-btn-row {
+   flex-direction: column;
+   gap: 10px;
+  }
+  #checklist-btn-row #clear-form-btn {
+   position: static !important;
+   right: auto !important;
+   order: 2;
+  }
+  #checklist-btn-row #see-management-btn {
+   order: 1;
+   width: 100%;
+  }
+ }
 </style>
 
 </head>
@@ -524,7 +563,7 @@
 
 <div class="container">
 
-<div style="background:#1A3A5C !important; color:white; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; margin-bottom:0;">
+<div class="app-header" style="background:#1A3A5C !important; color:white; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; margin-bottom:0;">
  <div>
   <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:white;">ANIMAL BITE — RABIES EXPOSURE CHECKLIST</div>
   <div style="font-size:11px; opacity:0.85; margin-top:2px; color:white;">Based on Circular H80/2024 &amp; NICD Advisory (June 2024)</div>
@@ -695,7 +734,7 @@
 
   </div><!-- /1C -->
   <!-- Button row -->
-  <div style="border-top:1px solid var(--border); margin-top:16px; padding-top:14px; position:relative; min-height:44px; display:flex; align-items:center; justify-content:center;">
+  <div id="checklist-btn-row" style="border-top:1px solid var(--border); margin-top:16px; padding-top:14px; position:relative; min-height:44px; display:flex; align-items:center; justify-content:center;">
    <button id="clear-form-btn" onclick="clearForm()" style="display:none; position:absolute; right:0; background:none; border:1px solid #CCC; border-radius:6px; padding:8px 14px; font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:var(--grey-mid); cursor:pointer; white-space:nowrap;">
     ✕ Clear Form
    </button>
@@ -817,6 +856,7 @@
        <button id="c2-date-clear" onclick="clearSchedule('c2'); this.style.display='none'; document.getElementById('c2-date-warn').style.display='inline';" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);text-decoration:underline;font-family:'IBM Plex Sans',sans-serif;text-underline-offset:2px;">&#x2715; Clear</button>
        <span id="c2-date-warn" style="display:inline; font-size:11px; font-weight:700; color:#B71C1C; margin-left:2px;">&#x26A0; Date required</span>
       </div>
+      <div class="table-scroll">
       <table>
        <thead>
         <tr><th>Dose</th><th>Day</th><th id="c2-day-head">Calculated Date</th><th>Route</th><th>Site</th></tr>
@@ -828,6 +868,7 @@
         <tr><td><strong>4th</strong></td><td>Day 14–28</td><td id="c2-d14" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--grey-mid);">—</td></tr>
        </tbody>
       </table>
+      </div>
       <div id="c2-onevial" class="context-box" style="margin-top:10px;">
        One vial = one dose (regardless of vial size) for adults and children. Changing vaccine brand during a course is acceptable if unavoidable.
       </div>
@@ -910,6 +951,7 @@
        </div>
       </div>
       <div style="margin-bottom:4px;" class="section-label">RIG ADMINISTRATION</div>
+      <div class="table-scroll">
       <table>
        <thead>
         <tr><th style="width:28px;">#</th><th>Step</th><th>Detail</th></tr>
@@ -923,6 +965,7 @@
         <tr><td style="font-weight:700;color:var(--cat2);">6</td><td>Timing</td><td>Give on Day 0 with first vaccine dose. <strong>Do not give after Day 7</strong> from first vaccine dose.</td></tr>
        </tbody>
       </table>
+      </div>
       <div class="context-box" style="margin-top:10px; border-left-color:#E65100; background:#FFE0B2;">
        <strong>RIG administration rules:</strong><br>
        • Infiltrate as much as anatomically possible into and around the wound — no additional IM injection elsewhere<br>
@@ -1018,6 +1061,7 @@
        <button id="c3-date-clear" onclick="clearSchedule('c3'); this.style.display='none'; document.getElementById('c3-date-warn').style.display='inline';" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);text-decoration:underline;font-family:'IBM Plex Sans',sans-serif;text-underline-offset:2px;">&#x2715; Clear</button>
        <span id="c3-date-warn" style="display:inline; font-size:11px; font-weight:700; color:#B71C1C; margin-left:2px;">&#x26A0; Date required</span>
       </div>
+      <div class="table-scroll">
       <table>
        <thead>
         <tr><th>Dose</th><th>Day</th><th>Calculated Date</th><th>Route</th><th>Site</th></tr>
@@ -1029,6 +1073,7 @@
         <tr><td><strong>4th</strong></td><td>Day 14–28</td><td id="c3-d14" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--grey-mid);">—</td></tr>
        </tbody>
       </table>
+      </div>
       <div id="c3-onevial" class="context-box" style="margin-top:10px; border-left-color:#B71C1C; background:#FFCDD2;">
        One vial = one dose (regardless of vial size) for adults and children. Changing vaccine brand during a course is acceptable if unavoidable.
       </div>
@@ -1102,6 +1147,7 @@
       </div>
 
       <div style="margin-bottom:4px;" class="section-label">RIG ADMINISTRATION</div>
+      <div class="table-scroll">
       <table>
        <thead>
         <tr><th style="width:28px;">#</th><th>Step</th><th>Detail</th></tr>
@@ -1116,6 +1162,7 @@
         <tr><td style="font-weight:700;color:var(--cat3);">7</td><td>If RIG unavailable</td><td><strong>Start vaccine immediately</strong> and source RIG urgently. Contact ID Specialist and NICD hotline. Document delay in patient record.</td></tr>
        </tbody>
       </table>
+      </div>
       <div class="context-box" style="margin-top:10px; border-left-color:#B71C1C; background:#FFCDD2;">
  <strong>RIG administration rules:</strong><br>
        • Infiltrate as much as anatomically possible into and around the wound — no additional IM injection elsewhere<br>
@@ -1251,7 +1298,8 @@
         <div id="stock-list" style="display:none; margin-top:10px; overflow:hidden;">
           <div class="section-label" style="margin-bottom:6px;">PUBLIC SECTOR STRATEGIC STOCK SITES — ANNEXURE 3 (JUNE 2024)</div>
           <div style="font-size:11px;color:var(--grey-mid);margin-bottom:8px;">Suggested quantities: Vaccine 4–6 vials · Immunoglobulin 4–10 vials (depends on dose &amp; brand). Product brands may change — consult Medicine Information Leaflet.</div>
-          <table style="font-size:11.5px; table-layout:fixed; width:100%;">
+          <div class="table-scroll">
+          <table style="font-size:11.5px; width:100%; min-width:520px;">
             <thead>
               <tr>
                 <th style="width:32px;text-align:center;"></th>
@@ -1294,6 +1342,7 @@
               <tr><td style="text-align:center;"><input type="checkbox" class="stock-sel" onchange="filterStock(this)" style="width:14px;height:14px;cursor:pointer;accent-color:var(--blue);"></td><td>Worcester Hospital</td><td>Pharmacy Department</td><td>023 348 1100</td><td>023 348 1148</td></tr>
             </tbody>
           </table>
+          </div>
           <div style="margin-top:6px;text-align:right;"><button id="stock-clear" onclick="clearStockSelection()" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);font-family:'IBM Plex Sans',sans-serif;text-decoration:underline;text-underline-offset:2px;">✕ Clear selection</button></div>
         </div>
       </div>
