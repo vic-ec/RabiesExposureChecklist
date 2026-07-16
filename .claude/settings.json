@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh run *)",
+      "Bash(curl -s https://vic-ec.github.io/RabiesExposureChecklist/ -o /tmp/live-page2.html -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(nohup python3 -m http.server 8936 --directory /workspaces/RabiesExposureChecklist)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8936/index.html)",
+      "Bash(node -e ' *)",
+      "Bash(node shot-header.js)",
+      "Bash(pkill -f \"http.server 8936\")",
+      "Bash(sort -t: -k2 -u)",
+      "Bash(python3 -c ' *)",
+      "Bash(nohup python3 -m http.server 8937 --directory /workspaces/RabiesExposureChecklist)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8937/index.html)",
+      "Bash(node shot-final.js)",
+      "Bash(timeout 25 node shot-final2.js)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(timeout 25 node shot-final3.js)",
+      "Bash(pkill -f \"http.server 8937\")",
+      "Bash(git commit -m ' *)",
+      "Bash(git fetch *)",
+      "Bash(git merge *)"
+    ]
+  }
+}
