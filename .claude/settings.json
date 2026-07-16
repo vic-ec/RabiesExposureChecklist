@@ -19,7 +19,8 @@
       "Bash(pkill -f \"http.server 8937\")",
       "Bash(git commit -m ' *)",
       "Bash(git fetch *)",
-      "Bash(git merge *)"
+      "Bash(git merge *)",
+      "Bash(git check-ignore *)"
     ]
   }
 }
