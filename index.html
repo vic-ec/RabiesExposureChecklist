@@ -561,6 +561,15 @@
  </div>
 </div>
 
+<!-- SIGNIFICANT IMMUNOSUPPRESSION DEFINITION MODAL -->
+<div class="chx-modal-overlay" id="immunosupp-modal-overlay" onclick="if(event.target===this)closeImmunosuppModal()">
+ <div class="chx-modal">
+  <button class="chx-modal-close" onclick="closeImmunosuppModal()">&#x2715;</button>
+  <div class="chx-modal-title">Significant Immunosuppression — Definition</div>
+  <div style="font-size:13px; line-height:1.6; color:var(--grey-dark);">Symptomatic HIV, malignancy on immunosuppressive agents, high dose steroids &gt;20 mg/day</div>
+ </div>
+</div>
+
 <div class="container">
 
 <div class="app-header" style="background:#1A3A5C !important; color:white; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; margin-bottom:0;">
@@ -710,8 +719,7 @@
     <div style="padding:10px 12px; background:#FFF5F5; border-right:1px solid #DDD;">
      <ul class="checklist" style="margin:0;">
       <li>
-       <input type="checkbox" id="r11" class="risk-check"><label for="r11">Significant immunosuppression</label>
-       <div style="margin-top:4px; margin-left:22px; font-size:11px; color:#666; font-style:italic; line-height:1.5;">Symptomatic HIV, malignancy on immunosuppressive agents, high dose steroids &gt;20 mg/day</div>
+       <input type="checkbox" id="r11" class="risk-check"><label for="r11">Significant immunosuppression</label><button class="chx-icon" onclick="openImmunosuppModal()" title="What counts as significant immunosuppression?">i</button>
       </li>
      </ul>
     </div>
@@ -2375,6 +2383,8 @@
 
  window.openChxModal  = openChxModal;
  window.closeChxModal = closeChxModal;
+ window.openImmunosuppModal  = openImmunosuppModal;
+ window.closeImmunosuppModal = closeImmunosuppModal;
 
  function openChxModal() {
   document.getElementById('chx-modal-overlay').classList.add('active');
@@ -2382,8 +2392,14 @@
  function closeChxModal() {
   document.getElementById('chx-modal-overlay').classList.remove('active');
  }
+ function openImmunosuppModal() {
+  document.getElementById('immunosupp-modal-overlay').classList.add('active');
+ }
+ function closeImmunosuppModal() {
+  document.getElementById('immunosupp-modal-overlay').classList.remove('active');
+ }
  document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeChxModal();
+  if (e.key === 'Escape') { closeChxModal(); closeImmunosuppModal(); }
  });
 
  // ── Init ──────────────────────────────────────────────────────────────────
