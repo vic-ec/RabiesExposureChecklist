@@ -20,7 +20,9 @@
       "Bash(git commit -m ' *)",
       "Bash(git fetch *)",
       "Bash(git merge *)",
-      "Bash(git check-ignore *)"
+      "Bash(git check-ignore *)",
+      "Bash(timeout 25 node shot-step.js)",
+      "Bash(pkill -f \"http.server 8938\")"
     ]
   }
 }
