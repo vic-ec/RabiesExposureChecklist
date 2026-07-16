@@ -10,12 +10,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <title>Animal Bite — Rabies Exposure Checklist</title>
 <style>
- <!-- DEPLOYMENT NOTE: IBM Plex fonts load from Google Fonts (requires internet).
-      For offline/intranet deployment, pre-download IBM Plex Sans and IBM Plex Mono
-      from fonts.google.com and host locally, replacing the @import below with
-      @font-face rules pointing to your local copies.
-      The tool degrades gracefully to system fonts (Arial / Courier New) if unavailable. -->
- @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+ /* Uses the system UI font stack (no external font loading required). */
 
  :root {
   --red: #C0392B;
@@ -37,7 +32,7 @@
  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
  body {
-  font-family: 'IBM Plex Sans', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
   color: var(--grey-dark);
   background: #F0F0F5;
@@ -65,7 +60,7 @@
   margin-bottom: 0;
  }
  .header-title {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -117,7 +112,7 @@
   letter-spacing: 0.3px;
  }
  .step-num {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: var(--grey-mid);
@@ -127,7 +122,7 @@
 
  /* BADGES */
  .badge {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -151,7 +146,7 @@
   margin-bottom: 10px;
  }
  .section-label {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.2px;
@@ -171,7 +166,7 @@
   border: 1.5px solid #AAAAAA;
   border-radius: 6px;
   padding: 7px 14px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -207,7 +202,7 @@
  .cat-card.active.cat2 { border-color: var(--cat2); box-shadow: 0 0 0 2px #FFCC80; }
  .cat-card.active.cat3 { border-color: var(--cat3); box-shadow: 0 0 0 2px #EF9A9A; }
  .cat-num {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 1;
@@ -288,7 +283,7 @@
  table { border-collapse: collapse; width: 100%; }
  th {
   background: #F5F5F5;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -319,7 +314,7 @@
  }
  .forms-list li:last-child { border-bottom: none; }
  .form-tag {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -356,7 +351,7 @@
   margin-bottom: 4px;
  }
  .contact-num {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
   font-weight: 700;
   color: var(--blue);
@@ -373,7 +368,7 @@
   background: #3949AB;
   color: white;
   padding: 8px 14px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -390,7 +385,7 @@
   border: none;
   border-radius: 5px;
   padding: 8px 18px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
@@ -442,7 +437,7 @@
   position: relative;
  }
  .chx-modal-title {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -471,7 +466,7 @@
  }
  .chx-modal-close:hover { color: var(--grey-dark); }
  .chx-section-label {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -574,8 +569,9 @@
 
 <div class="app-header" style="background:#1A3A5C !important; color:white; padding:14px 20px; display:flex; justify-content:space-between; align-items:center; margin-bottom:0;">
  <div>
-  <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:white;">ANIMAL BITE — RABIES EXPOSURE CHECKLIST</div>
+  <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:15.6px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:white;">ANIMAL BITE — RABIES EXPOSURE CHECKLIST</div>
   <div style="font-size:11px; opacity:0.85; margin-top:2px; color:white;">Based on Circular H80/2024 &amp; NICD Advisory (June 2024)</div>
+  <div style="font-size:10px; opacity:0.65; margin-top:1px; color:white;">App version 16.07.2026</div>
  </div>
 </div>
 
@@ -608,11 +604,11 @@
    <button class="animal-btn" id="an-other" onclick="selectAnimal('other')">Other mammal</button>
    <span id="other-animal-input" style="display:none; align-items:center; gap:6px; vertical-align:middle;">
     <input type="text" id="other-animal-text" placeholder="Specify animal…"
-     style="padding:5px 10px; border:1.5px solid #CACACA; border-radius:4px; font-size:13px; font-family:'IBM Plex Sans',sans-serif; width:180px;">
+     style="padding:5px 10px; border:1.5px solid #CACACA; border-radius:4px; font-size:13px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; width:180px;">
    </span>
   </div>
   <div style="text-align:right; margin-top:4px;">
-   <button id="animal-clear-btn" onclick="clearAnimal()" style="display:none; background:none; border:none; padding:0; cursor:pointer; font-size:11px; color:var(--grey-mid); font-family:'IBM Plex Sans',sans-serif; text-decoration:underline; text-underline-offset:2px;">✕ Clear</button>
+   <button id="animal-clear-btn" onclick="clearAnimal()" style="display:none; background:none; border:none; padding:0; cursor:pointer; font-size:11px; color:var(--grey-mid); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; text-decoration:underline; text-underline-offset:2px;">✕ Clear</button>
   </div>
 
   <!-- STEP 1B: SELECT THE TYPE OF EXPOSURE -->
@@ -639,7 +635,7 @@
     </div>
    </div><!-- /cat-grid -->
    <div style="text-align:right; margin-top:4px;">
-    <button id="cat-clear-btn" onclick="clearCat()" style="display:none; background:none; border:none; padding:0; cursor:pointer; font-size:11px; color:var(--grey-mid); font-family:'IBM Plex Sans',sans-serif; text-decoration:underline; text-underline-offset:2px;">✕ Clear</button>
+    <button id="cat-clear-btn" onclick="clearCat()" style="display:none; background:none; border:none; padding:0; cursor:pointer; font-size:11px; color:var(--grey-mid); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; text-decoration:underline; text-underline-offset:2px;">✕ Clear</button>
    </div>
   </div>
 
@@ -651,8 +647,8 @@
    <!-- Shared header row -->
    <div style="display:grid; grid-template-columns:120px 1fr 1fr; gap:0; margin-bottom:0;">
     <div></div>
-    <div style="background:#C62828; color:white; padding:7px 12px; border-radius:6px 0 0 0; font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:700; letter-spacing:1px;">⚠ HIGH RISK</div>
-    <div style="background:#2E7D32; color:white; padding:7px 12px; border-radius:0 6px 0 0; font-family:'IBM Plex Mono',monospace; font-size:10px; font-weight:700; letter-spacing:1px;">✓ LOW RISK</div>
+    <div style="background:#C62828; color:white; padding:7px 12px; border-radius:6px 0 0 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:1px;">⚠ HIGH RISK</div>
+    <div style="background:#2E7D32; color:white; padding:7px 12px; border-radius:0 6px 0 0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:10px; font-weight:700; letter-spacing:1px;">✓ LOW RISK</div>
    </div>
 
    <!-- SOURCE ANIMAL row -->
@@ -736,17 +732,17 @@
 
    <!-- Clear buttons -->
    <div style="display:flex; justify-content:flex-end; gap:16px; margin-top:6px;">
-    <button id="high-risk-clear-btn" onclick="clearHighRisk()" style="display:none; background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:#C62828;text-decoration:underline;font-family:'IBM Plex Sans',sans-serif;">✕ Clear high risk</button>
-    <button id="low-risk-clear-btn" onclick="clearLowRisk()" style="display:none; background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:#2E7D32;text-decoration:underline;font-family:'IBM Plex Sans',sans-serif;">✕ Clear low risk</button>
+    <button id="high-risk-clear-btn" onclick="clearHighRisk()" style="display:none; background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:#C62828;text-decoration:underline;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">✕ Clear high risk</button>
+    <button id="low-risk-clear-btn" onclick="clearLowRisk()" style="display:none; background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:#2E7D32;text-decoration:underline;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">✕ Clear low risk</button>
    </div>
 
   </div><!-- /1C -->
   <!-- Button row -->
   <div id="checklist-btn-row" style="border-top:1px solid var(--border); margin-top:16px; padding-top:14px; position:relative; min-height:44px; display:flex; align-items:center; justify-content:center;">
-   <button id="clear-form-btn" onclick="clearForm()" style="display:none; position:absolute; right:0; background:none; border:1px solid #CCC; border-radius:6px; padding:8px 14px; font-family:'IBM Plex Sans',sans-serif; font-size:12px; font-weight:600; color:var(--grey-mid); cursor:pointer; white-space:nowrap;">
+   <button id="clear-form-btn" onclick="clearForm()" style="display:none; position:absolute; right:0; background:none; border:1px solid #CCC; border-radius:6px; padding:8px 14px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:12px; font-weight:600; color:var(--grey-mid); cursor:pointer; white-space:nowrap;">
     ✕ Clear Form
    </button>
-   <button id="see-management-btn" onclick="revealManagement()" style="display:none; background:#1B5E20; color:white; border:none; border-radius:6px; padding:13px 36px; font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:700; letter-spacing:0.5px; cursor:pointer; box-shadow: 0 3px 8px rgba(0,0,0,0.25);">
+   <button id="see-management-btn" onclick="revealManagement()" style="display:none; background:#1B5E20; color:white; border:none; border-radius:6px; padding:13px 36px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:15px; font-weight:700; letter-spacing:0.5px; cursor:pointer; box-shadow: 0 3px 8px rgba(0,0,0,0.25);">
     ▶&nbsp; See Management
    </button>
   </div>
@@ -854,14 +850,14 @@
     <!-- Vaccine schedule — hidden until Yes selected -->
     <div id="c2-vaccine-schedule" style="display:none; margin-bottom:10px; border:1.5px solid #FFCC80; border-radius:6px; overflow:hidden;">
      <div style="background:#E65100; padding:7px 14px; border-bottom:1px solid #FFCC80;">
-      <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:1px; color:white;">VACCINE SCHEDULE &amp; ADMINISTRATION</span>
+      <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:1px; color:white;">VACCINE SCHEDULE &amp; ADMINISTRATION</span>
      </div>
      <div style="padding:10px 14px;">
       <div style="margin-bottom:10px; padding:8px 12px; background:white; border:1px solid #DEDEDE; border-radius:4px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
        <span style="font-size:12px; font-weight:600;">Calculate schedule — Date of 1st dose:</span>
        <input type="date" id="c2-date-input" oninput="calcSchedule('c2'); checkDownloadReady(); document.getElementById('c2-date-clear').style.display=this.value?'inline':'none'; document.getElementById('c2-date-warn').style.display=this.value?'none':'inline';"
-         style="padding:5px 8px; border:1.5px solid #CACACA; border-radius:4px; font-size:13px; font-family:'IBM Plex Mono',monospace;">
-       <button id="c2-date-clear" onclick="clearSchedule('c2'); this.style.display='none'; document.getElementById('c2-date-warn').style.display='inline';" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);text-decoration:underline;font-family:'IBM Plex Sans',sans-serif;text-underline-offset:2px;">&#x2715; Clear</button>
+         style="padding:5px 8px; border:1.5px solid #CACACA; border-radius:4px; font-size:13px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+       <button id="c2-date-clear" onclick="clearSchedule('c2'); this.style.display='none'; document.getElementById('c2-date-warn').style.display='inline';" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);text-decoration:underline;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;text-underline-offset:2px;">&#x2715; Clear</button>
        <span id="c2-date-warn" style="display:inline; font-size:11px; font-weight:700; color:#B71C1C; margin-left:2px;">&#x26A0; Date required</span>
       </div>
       <div class="table-scroll">
@@ -870,10 +866,10 @@
         <tr><th>Dose</th><th>Day</th><th id="c2-day-head">Calculated Date</th><th>Route</th><th>Site</th></tr>
        </thead>
        <tbody>
-        <tr><td><strong>1st</strong></td><td>Day 0</td><td id="c2-d0" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--grey-mid);">—</td><td rowspan="4">IM injection</td><td rowspan="4">Deltoid (adults) / anterolateral thigh (children &lt;2 yrs)<br><span style="color:var(--red);font-weight:600;">⚠ NEVER gluteus maximus — INEFFECTIVE</span></td></tr>
-        <tr><td><strong>2nd</strong></td><td>Day 3</td><td id="c2-d3" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--grey-mid);">—</td></tr>
-        <tr><td><strong>3rd</strong></td><td>Day 7</td><td id="c2-d7" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--grey-mid);">—</td></tr>
-        <tr><td><strong>4th</strong></td><td>Day 14–28</td><td id="c2-d14" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--grey-mid);">—</td></tr>
+        <tr><td><strong>1st</strong></td><td>Day 0</td><td id="c2-d0" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;color:var(--grey-mid);">—</td><td rowspan="4">IM injection</td><td rowspan="4">Deltoid (adults) / anterolateral thigh (children &lt;2 yrs)<br><span style="color:var(--red);font-weight:600;">⚠ NEVER gluteus maximus — INEFFECTIVE</span></td></tr>
+        <tr><td><strong>2nd</strong></td><td>Day 3</td><td id="c2-d3" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;color:var(--grey-mid);">—</td></tr>
+        <tr><td><strong>3rd</strong></td><td>Day 7</td><td id="c2-d7" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;color:var(--grey-mid);">—</td></tr>
+        <tr><td><strong>4th</strong></td><td>Day 14–28</td><td id="c2-d14" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;color:var(--grey-mid);">—</td></tr>
        </tbody>
       </table>
       </div>
@@ -895,7 +891,7 @@
      <!-- Escalation prompt — shown when high-risk features ticked in Step 1C -->
      <div id="cat2-escalation-prompt" style="display:none; margin-top:8px; border:1.5px solid #FFCC80; border-radius:6px; overflow:hidden;">
       <div style="background:#FFE0B2; padding:8px 14px; border-bottom:1px solid #FFCC80;">
-       <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:1px; color:#E65100;">⚠ SIGNIFICANT IMMUNOSUPPRESSION PRESENT. DISCUSSION WITH ID SPECIALIST ADVISED</span>
+       <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:1px; color:#E65100;">⚠ SIGNIFICANT IMMUNOSUPPRESSION PRESENT. DISCUSSION WITH ID SPECIALIST ADVISED</span>
       </div>
       <div style="padding:10px 14px; background:white; font-size:13px;">
        Category II wounds in patients with significant immunosuppression may warrant RIG in addition to vaccine. Seek ID Specialist advice before proceeding.<br>
@@ -921,7 +917,7 @@
     <!-- RIG panel for Cat II — hidden until Yes selected -->
     <div id="c2-rig-panel" style="display:none; margin-bottom:10px; border:1.5px solid #FFCC80; border-radius:6px; overflow:hidden;">
      <div style="background:#E65100; padding:8px 14px; border-bottom:1px solid #FFCC80;">
-      <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:1px; color:white;">RIG DOSE CALCULATOR &amp; ADMINISTRATION — HIGH RISK CATEGORY II</span>
+      <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:1px; color:white;">RIG DOSE CALCULATOR &amp; ADMINISTRATION — HIGH RISK CATEGORY II</span>
      </div>
      <div style="padding:12px 14px; background:white;">
       <div style="margin-bottom:14px; padding:10px 14px; background:white; border:1px solid #FFCC80; border-radius:5px;">
@@ -930,9 +926,9 @@
         <label for="c2-patient-weight" style="font-size:13px; font-weight:600; white-space:nowrap;">Patient Weight:</label>
         <input type="number" id="c2-patient-weight" min="1" max="300" placeholder="kg"
           oninput="calcRIGfor('c2'); checkDownloadReady(); document.getElementById('c2-weight-clear').style.display=this.value?'inline':'none';"
-          style="width:90px; padding:6px 10px; border:1.5px solid #CACACA; border-radius:4px; font-size:14px; font-family:'IBM Plex Mono',monospace; text-align:center;">
+          style="width:90px; padding:6px 10px; border:1.5px solid #CACACA; border-radius:4px; font-size:14px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; text-align:center;">
         <span style="font-size:13px; color:var(--grey-mid);">kg</span>
-        <button id="c2-weight-clear" onclick="document.getElementById('c2-patient-weight').value=''; calcRIGfor('c2'); checkDownloadReady(); this.style.display='none';" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);text-decoration:underline;font-family:'IBM Plex Sans',sans-serif;text-underline-offset:2px;margin-left:4px;">&#x2715; Clear</button>
+        <button id="c2-weight-clear" onclick="document.getElementById('c2-patient-weight').value=''; calcRIGfor('c2'); checkDownloadReady(); this.style.display='none';" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);text-decoration:underline;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;text-underline-offset:2px;margin-left:4px;">&#x2715; Clear</button>
         <span id="c2-weight-warn" style="display:none; font-size:11px; font-weight:700; color:#B71C1C; margin-left:6px;">&#x26A0; Weight required</span>
        </div>
        <div id="c2-rig-doses" style="display:none; margin-top:10px;">
@@ -940,19 +936,19 @@
          <div style="background:#FFE0B2; border:1px solid #FFCC80; border-radius:4px; padding:8px 12px;">
           <div style="font-size:10px; font-weight:700; color:#E65100; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">Human RIG (HRIG)</div>
           <div style="font-size:10px; color:var(--grey-mid); margin-bottom:2px;">20 IU/kg</div>
-          <div id="c2-hrig-dose" style="font-size:22px; font-weight:700; font-family:'IBM Plex Mono',monospace; color:var(--grey-dark);"></div>
+          <div id="c2-hrig-dose" style="font-size:22px; font-weight:700; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:var(--grey-dark);"></div>
           <div style="font-size:10px; color:var(--grey-mid); margin-top:2px;">IU — preferred product</div>
          </div>
          <div style="background:#FFE0B2; border:1px solid #FFCC80; border-radius:4px; padding:8px 12px;">
           <div style="font-size:10px; font-weight:700; color:#E65100; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">Vials Required</div>
           <div style="font-size:10px; color:var(--grey-mid); margin-bottom:2px;">300 IU/vial</div>
-          <div id="c2-hrig-vials" style="font-size:22px; font-weight:700; font-family:'IBM Plex Mono',monospace; color:var(--grey-dark);"></div>
+          <div id="c2-hrig-vials" style="font-size:22px; font-weight:700; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:var(--grey-dark);"></div>
           <div style="font-size:10px; color:var(--grey-mid); margin-top:2px;">vials (HRIG, rounded up)</div>
          </div>
          <div style="background:#FFE0B2; border:1px solid #FFCC80; border-radius:4px; padding:8px 12px;">
           <div style="font-size:10px; font-weight:700; color:#E65100; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">Equine RIG (ERIG)</div>
           <div style="font-size:10px; color:var(--grey-mid); margin-bottom:2px;">40 IU/kg</div>
-          <div id="c2-erig-dose" style="font-size:22px; font-weight:700; font-family:'IBM Plex Mono',monospace; color:var(--grey-dark);"></div>
+          <div id="c2-erig-dose" style="font-size:22px; font-weight:700; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:var(--grey-dark);"></div>
           <div style="font-size:10px; color:var(--grey-mid); margin-top:2px;">IU</div>
          </div>
         </div>
@@ -1059,14 +1055,14 @@
     <!-- Vaccine schedule box — hidden until Yes selected -->
     <div id="c3-vaccine-schedule" style="display:none; margin-bottom:10px; border:1.5px solid #EF9A9A; border-radius:6px; overflow:hidden;">
      <div style="background:#B71C1C; padding:7px 14px; border-bottom:1px solid #EF9A9A;">
-      <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:1px; color:white;">VACCINE SCHEDULE &amp; ADMINISTRATION</span>
+      <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:1px; color:white;">VACCINE SCHEDULE &amp; ADMINISTRATION</span>
      </div>
      <div style="padding:10px 14px;">
       <div style="margin-bottom:10px; padding:8px 12px; background:white; border:1px solid #EF9A9A; border-radius:4px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
        <span style="font-size:12px; font-weight:600;">Calculate schedule — Date of 1st dose:</span>
        <input type="date" id="c3-date-input" oninput="calcSchedule('c3'); checkDownloadReady(); document.getElementById('c3-date-clear').style.display=this.value?'inline':'none'; document.getElementById('c3-date-warn').style.display=this.value?'none':'inline';"
-         style="padding:5px 8px; border:1.5px solid #CACACA; border-radius:4px; font-size:13px; font-family:'IBM Plex Mono',monospace;">
-       <button id="c3-date-clear" onclick="clearSchedule('c3'); this.style.display='none'; document.getElementById('c3-date-warn').style.display='inline';" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);text-decoration:underline;font-family:'IBM Plex Sans',sans-serif;text-underline-offset:2px;">&#x2715; Clear</button>
+         style="padding:5px 8px; border:1.5px solid #CACACA; border-radius:4px; font-size:13px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+       <button id="c3-date-clear" onclick="clearSchedule('c3'); this.style.display='none'; document.getElementById('c3-date-warn').style.display='inline';" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);text-decoration:underline;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;text-underline-offset:2px;">&#x2715; Clear</button>
        <span id="c3-date-warn" style="display:inline; font-size:11px; font-weight:700; color:#B71C1C; margin-left:2px;">&#x26A0; Date required</span>
       </div>
       <div class="table-scroll">
@@ -1075,10 +1071,10 @@
         <tr><th>Dose</th><th>Day</th><th>Calculated Date</th><th>Route</th><th>Site</th></tr>
        </thead>
        <tbody>
-        <tr><td><strong>1st</strong></td><td>Day 0</td><td id="c3-d0" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--grey-mid);">—</td><td rowspan="4">IM injection</td><td rowspan="4">Deltoid (adults) / anterolateral thigh (children &lt;2 yrs)<br><span style="color:var(--red);font-weight:600;">⚠ NEVER gluteus maximus — INEFFECTIVE</span></td></tr>
-        <tr><td><strong>2nd</strong></td><td>Day 3</td><td id="c3-d3" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--grey-mid);">—</td></tr>
-        <tr><td><strong>3rd</strong></td><td>Day 7</td><td id="c3-d7" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--grey-mid);">—</td></tr>
-        <tr><td><strong>4th</strong></td><td>Day 14–28</td><td id="c3-d14" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--grey-mid);">—</td></tr>
+        <tr><td><strong>1st</strong></td><td>Day 0</td><td id="c3-d0" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;color:var(--grey-mid);">—</td><td rowspan="4">IM injection</td><td rowspan="4">Deltoid (adults) / anterolateral thigh (children &lt;2 yrs)<br><span style="color:var(--red);font-weight:600;">⚠ NEVER gluteus maximus — INEFFECTIVE</span></td></tr>
+        <tr><td><strong>2nd</strong></td><td>Day 3</td><td id="c3-d3" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;color:var(--grey-mid);">—</td></tr>
+        <tr><td><strong>3rd</strong></td><td>Day 7</td><td id="c3-d7" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;color:var(--grey-mid);">—</td></tr>
+        <tr><td><strong>4th</strong></td><td>Day 14–28</td><td id="c3-d14" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:12px;color:var(--grey-mid);">—</td></tr>
        </tbody>
       </table>
       </div>
@@ -1113,7 +1109,7 @@
     <!-- RIG PANEL — revealed when Yes selected -->
     <div id="rig-panel" style="display:none; margin-bottom:10px; border:1.5px solid #EF9A9A; border-radius:6px; overflow:hidden; transition: all 0.2s;">
      <div style="background:#B71C1C; padding:8px 14px; border-bottom:1px solid #EF9A9A;">
-      <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; font-weight:700; letter-spacing:1px; color:white;">RIG DOSE CALCULATOR &amp; ADMINISTRATION</span>
+      <span style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:11px; font-weight:700; letter-spacing:1px; color:white;">RIG DOSE CALCULATOR &amp; ADMINISTRATION</span>
      </div>
      <div style="padding:12px 14px; background:white;">
 
@@ -1125,9 +1121,9 @@
         <input type="number" id="patient-weight" min="1" max="300" placeholder="kg"
                   oninput="calcRIG(); checkDownloadReady(); document.getElementById('c3-weight-clear').style.display=this.value?'inline':'none';"
                   style="width:90px; padding:6px 10px; border:1.5px solid #CACACA; border-radius:4px;
-                         font-size:14px; font-family:'IBM Plex Mono',monospace; text-align:center;">
+                         font-size:14px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; text-align:center;">
         <span style="font-size:13px; color:var(--grey-mid);">kg</span>
-        <button id="c3-weight-clear" onclick="document.getElementById('patient-weight').value=''; calcRIG(); checkDownloadReady(); this.style.display='none';" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);text-decoration:underline;font-family:'IBM Plex Sans',sans-serif;text-underline-offset:2px;margin-left:4px;">&#x2715; Clear</button>
+        <button id="c3-weight-clear" onclick="document.getElementById('patient-weight').value=''; calcRIG(); checkDownloadReady(); this.style.display='none';" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);text-decoration:underline;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;text-underline-offset:2px;margin-left:4px;">&#x2715; Clear</button>
         <span id="c3-weight-warn" style="display:none; font-size:11px; font-weight:700; color:#B71C1C; margin-left:6px;">&#x26A0; Weight required</span>
        </div>
        <div id="rig-doses" style="display:none; margin-top:10px;">
@@ -1135,19 +1131,19 @@
          <div style="background:#FFCDD2; border:1px solid #EF9A9A; border-radius:4px; padding:8px 12px;">
           <div style="font-size:10px; font-weight:700; color:#B71C1C; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">Human RIG (HRIG)</div>
           <div style="font-size:10px; color:var(--grey-mid); margin-bottom:2px;">20 IU/kg</div>
-          <div id="hrig-dose" style="font-size:22px; font-weight:700; font-family:'IBM Plex Mono',monospace; color:var(--grey-dark);"></div>
+          <div id="hrig-dose" style="font-size:22px; font-weight:700; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:var(--grey-dark);"></div>
           <div style="font-size:10px; color:var(--grey-mid); margin-top:2px;">IU — preferred product</div>
          </div>
          <div style="background:#FFCDD2; border:1px solid #EF9A9A; border-radius:4px; padding:8px 12px;">
           <div style="font-size:10px; font-weight:700; color:#B71C1C; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">Vials Required</div>
           <div style="font-size:10px; color:var(--grey-mid); margin-bottom:2px;">300 IU/vial</div>
-          <div id="hrig-vials" style="font-size:22px; font-weight:700; font-family:'IBM Plex Mono',monospace; color:var(--grey-dark);"></div>
+          <div id="hrig-vials" style="font-size:22px; font-weight:700; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:var(--grey-dark);"></div>
           <div style="font-size:10px; color:var(--grey-mid); margin-top:2px;">vials (HRIG, rounded up)</div>
          </div>
          <div style="background:#FFCDD2; border:1px solid #EF9A9A; border-radius:4px; padding:8px 12px;">
           <div style="font-size:10px; font-weight:700; color:#B71C1C; letter-spacing:1px; text-transform:uppercase; margin-bottom:4px;">Equine RIG (ERIG)</div>
           <div style="font-size:10px; color:var(--grey-mid); margin-bottom:2px;">40 IU/kg</div>
-          <div id="erig-dose" style="font-size:22px; font-weight:700; font-family:'IBM Plex Mono',monospace; color:var(--grey-dark);"></div>
+          <div id="erig-dose" style="font-size:22px; font-weight:700; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; color:var(--grey-dark);"></div>
           <div style="font-size:10px; color:var(--grey-mid); margin-top:2px;">IU — if HRIG unavailable</div>
          </div>
         </div>
@@ -1299,7 +1295,7 @@
         <span style="font-size:12px;color:var(--grey-mid);">Notify pharmacy services to order stock promptly if low. Monitor stock and act early as demand rises.</span><br>
         <button onclick="toggleStockList()" id="stock-toggle-btn"
           style="margin-top:8px; background:none; border:none; padding:0; cursor:pointer;
-                 font-size:12px; color:var(--blue); font-family:'IBM Plex Sans',sans-serif;
+                 font-size:12px; color:var(--blue); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
                  text-decoration:underline; text-underline-offset:2px;">
           &#9658; See institutions that stock Rabies Vaccine and Immunoglobulin
         </button>
@@ -1351,7 +1347,7 @@
             </tbody>
           </table>
           </div>
-          <div style="margin-top:6px;text-align:right;"><button id="stock-clear" onclick="clearStockSelection()" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);font-family:'IBM Plex Sans',sans-serif;text-decoration:underline;text-underline-offset:2px;">✕ Clear selection</button></div>
+          <div style="margin-top:6px;text-align:right;"><button id="stock-clear" onclick="clearStockSelection()" style="display:none;background:none;border:none;padding:0;cursor:pointer;font-size:11px;color:var(--grey-mid);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;text-decoration:underline;text-underline-offset:2px;">✕ Clear selection</button></div>
         </div>
       </div>
      </li>
@@ -1359,13 +1355,13 @@
 
     <div style="margin-top:14px; padding-top:12px; border-top:1px solid var(--border); text-align:center; display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
      <div>
-      <button id="btn-checklist-pdf" disabled onclick="generatePDF()" style="background:#1A3A5C; color:white; border:none; border-radius:6px; padding:12px 28px; font-family:'IBM Plex Sans',sans-serif; font-size:14px; font-weight:700; letter-spacing:0.5px; cursor:not-allowed; opacity:0.4; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+      <button id="btn-checklist-pdf" disabled onclick="generatePDF()" style="background:#1A3A5C; color:white; border:none; border-radius:6px; padding:12px 28px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:14px; font-weight:700; letter-spacing:0.5px; cursor:not-allowed; opacity:0.4; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
        &#x2B07; Download Checklist Summary (PDF)
       </button>
       <div style="font-size:11px; color:var(--grey-mid); margin-top:6px;">Summarises risk features, category, management &amp; vaccine schedule</div>
      </div>
      <div>
-      <button id="btn-annexure-pdf" disabled onclick="generateAnnexure2()" style="background:#1B5E20; color:white; border:none; border-radius:6px; padding:12px 28px; font-family:'IBM Plex Sans',sans-serif; font-size:14px; font-weight:700; letter-spacing:0.5px; cursor:not-allowed; opacity:0.4; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+      <button id="btn-annexure-pdf" disabled onclick="generateAnnexure2()" style="background:#1B5E20; color:white; border:none; border-radius:6px; padding:12px 28px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:14px; font-weight:700; letter-spacing:0.5px; cursor:not-allowed; opacity:0.4; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
        &#x2B07; Download Animal Bite Incident Form (Pre-filled PDF)
       </button>
       <div style="font-size:11px; color:var(--grey-mid); margin-top:6px;">WC Animal Bite Incident Form &mdash; populated with captured data</div>
@@ -1383,7 +1379,7 @@
 </div><!-- /container -->
 
 <div style="text-align:center; padding:20px 0 32px;">
- <button onclick="clearForm()" style="background:none; border:1.5px solid #CCC; border-radius:6px; padding:10px 24px; font-family:'IBM Plex Sans',sans-serif; font-size:13px; font-weight:600; color:var(--grey-mid); cursor:pointer; letter-spacing:0.3px;">
+ <button onclick="clearForm()" style="background:none; border:1.5px solid #CCC; border-radius:6px; padding:10px 24px; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:13px; font-weight:600; color:var(--grey-mid); cursor:pointer; letter-spacing:0.3px;">
   &#x2715; Clear entire form
  </button>
  <div style="font-size:11px; color:var(--grey-mid); margin-top:6px;">Resets all selections, dates, weights and vaccine/RIG decisions</div>
@@ -2045,9 +2041,8 @@
   const html = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">'
    + '<title>ANIMAL BITE — RABIES EXPOSURE CHECKLIST '+dateStr+' '+timeStr+'</title>'
    + '<style>'
-   + '@import url(\'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap\');'
    + '*{box-sizing:border-box;margin:0;padding:0;}'
-   + 'body{font-family:\'IBM Plex Sans\',Arial,sans-serif;font-size:12.5px;color:#1C1C1E;padding:20px 28px;line-height:1.5;}'
+   + 'body{font-family:-apple-system,BlinkMacSystemFont,\'Segoe UI\',Roboto,Helvetica,Arial,sans-serif;font-size:12.5px;color:#1C1C1E;padding:20px 28px;line-height:1.5;}'
    + 'h2{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#555;margin:16px 0 6px;padding-bottom:4px;border-bottom:1.5px solid #DDD;}'
    + 'table{border-collapse:collapse;width:100%;}'
    + '.disclaimer{margin-top:20px;padding:8px 12px;background:#FFF9C4;border-left:3px solid #F9A825;font-size:11px;border-radius:0 4px 4px 0;}'
