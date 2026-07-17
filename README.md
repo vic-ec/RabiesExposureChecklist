@@ -52,4 +52,4 @@ Open an issue for clinical corrections (reference the relevant guideline) or sub
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Creative Commons BY-NC 4.0. Free to use and share with attribution; commercial use, resale, or profit from this material is not permitted.
