@@ -37,7 +37,23 @@
   color: var(--grey-dark);
   background: #F0F0F5;
   padding: 16px;
+  padding-bottom: 44px;
   line-height: 1.5;
+ }
+
+ /* FOOTER */
+ .app-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #1A3A5C;
+  color: white;
+  font-size: 11px;
+  text-align: center;
+  padding: 8px 12px;
+  z-index: 500;
+  box-shadow: 0 -1px 4px rgba(0,0,0,0.15);
  }
 
  /* CONTAINER */
@@ -550,7 +566,6 @@
  <div>
   <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; font-size:15.6px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:white;">ANIMAL BITE — RABIES EXPOSURE CHECKLIST</div>
   <div style="font-size:11px; opacity:0.85; margin-top:2px; color:white;">Based on Circular H80/2024 &amp; NICD Advisory (June 2024)</div>
-  <div style="font-size:10px; opacity:0.65; margin-top:1px; color:white;">App version 16.07.2026</div>
  </div>
 </div>
 
@@ -1355,6 +1370,8 @@
  </button>
  <div style="font-size:11px; color:var(--grey-mid); margin-top:6px;">Resets all selections, dates, weights and vaccine/RIG decisions</div>
 </div>
+
+<div class="app-footer">&copy; vic-ec &nbsp;|&nbsp; v16.07.2026</div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
  let selectedCat = null;
