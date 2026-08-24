@@ -18,28 +18,31 @@ A single-file, offline-capable clinical decision support tool for assessing rabi
 
 ## Tech stack
 
-Plain HTML/CSS/vanilla JS (no framework or build step), [pdf-lib](https://pdf-lib.js.org/) via CDN for PDF generation, IBM Plex fonts (falls back to system fonts).
+Plain HTML/CSS/vanilla JS (no framework or build step). [pdf-lib](https://pdf-lib.js.org/) v1.17.1 is bundled inline in `index.html` for PDF generation, and the UI uses the system font stack — so the app has no external dependencies at runtime.
 
 ## Getting started
 
-No installation needed — clone or download, then open `Animal_Bites___Rabies_Checklist.html` in a modern browser.
+No installation needed — clone or download, then open `index.html` in a modern browser.
 
 ## Offline / intranet deployment
 
-Designed for Microsoft-centric healthcare IT environments with restricted internet access. Two resources load from external CDNs by default:
+Designed for Microsoft-centric healthcare IT environments with restricted internet access. `index.html` makes **no network requests at all** — every dependency is embedded in the file:
 
-| Resource | Default source | For offline use |
-|---|---|---|
-| `pdf-lib` | `cdnjs.cloudflare.com` | Host [pdf-lib.min.js](https://unpkg.com/pdf-lib/dist/pdf-lib.min.js) locally and update the `<script src="...">`. |
-| IBM Plex fonts | `fonts.googleapis.com` | Host locally, replace `@import` with local `@font-face` rules. |
+| Resource | How it ships |
+|---|---|
+| `pdf-lib` v1.17.1 | Bundled inline in the `<head>` of `index.html`. |
+| Annexure 2 form template | Embedded as base64 in the page script. |
+| Fonts | System UI font stack — nothing to download. |
 
-Fonts degrade gracefully if unavailable; PDF generation requires `pdf-lib` to be reachable (locally or via CDN).
+Copy the single file anywhere — a network share, a USB stick, an intranet web server, or a local folder opened via `file://` — and every feature, PDF generation included, works with the network switched off.
+
+To upgrade pdf-lib, replace the bundled `<script>` block in the `<head>` with a newer `pdf-lib.min.js` (strip its trailing `//# sourceMappingURL=` comment, which points at a `.map` file that is not shipped).
 
 ## Repository structure
 
 ```
 .
-└── Animal_Bites___Rabies_Checklist.html   # Complete application
+└── index.html   # Complete application (pdf-lib bundled inline)
 ```
 
 ## Clinical basis
